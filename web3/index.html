@@ -27,13 +27,10 @@
     const tests = () => {
       
       
-      console.log(study);
+      study.joinStudy(1, { from: participant });
       
       
-      study.joinStudy(0, { from: participant });
-      
-      
-      setTimeout(() => study.getStudyParticipants.call(0).then((res) => {
+      setTimeout(() => study.getStudyParticipants.call(1).then((res) => {
         console.log(res.length);
       }), 500);
     };

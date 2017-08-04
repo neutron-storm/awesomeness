@@ -17,6 +17,8 @@ contract StudyBlock {
     
     function StudyBlock() {
         studies.push("Fitbit Study");
+        studies.push("Jawbone Study");
+        studies.push("Apple Watch Study");
     }
     
     function joinStudy(uint which) {
