@@ -20,9 +20,7 @@ const runPage = () => {
     
       
       
-    setTimeout(() => study.getStudyParticipants.call(0).then((res) => {
-      console.log(res.length);
-    }), 500);
+    setTimeout(() => {window.location = 'upload.html'}, 500);
     
     
   };
