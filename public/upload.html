@@ -37,13 +37,17 @@
                         </form>
                     </div> 
                       <p>
-                        {{ success}}
-                      </p>
-                      <p>
                         You have this many datasets uploaded to FitBit Study
                       </p>
                        <div>
                                     {{ datacount }}
+                                </div>
+
+                      <p>
+                        Data Hashes
+                      </p>
+                       <div v-for="hash in hashes">
+                                    {{ hash }}
                                 </div>
 
 

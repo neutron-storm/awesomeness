@@ -14,6 +14,6 @@ const runPage = () => {
 
   study.getStudyParticipants.call(0).then((res) => {
     app.participants = res;
-  })
+  });
   
 };

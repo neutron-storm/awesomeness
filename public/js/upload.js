@@ -1,12 +1,14 @@
 
 
 const runPage = () => {
+
   
   var app = new Vue({
     el: '#app',
     data: {
       datacount: null,
-    	success: '',
+      hashes: [],
+      success:true,
     	lastName: '',
     	consent: true
     }
@@ -28,11 +30,22 @@ fetch('http://localhost:4000/content', {
 
     app.success = 'Successfully Uploaded data with Hash ' + data;
 
+    app.hashes = [];
     study.uploadDataset(0, data, { from: participant, gas: 500000 }).then(() => {
       console.log('hi');
       
   setTimeout(() => {
-    study.getDatasetCount.call(0, participant).then((res) => app.datacount = res);
+
+    study.getDatasetCount.call(0, participant).then((res) => {
+      app.datacount = res;
+
+      for (var i = 0; i < parseInt(res); i++) {
+        study.getDataset.call(0, participant, i).then((res) => {
+          app.hashes.push(res);
+        })
+      }
+
+    });
   }, 1000);
       
     });
